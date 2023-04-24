@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap');
+*{
+    margin: 0;
+    padding: 0%;
+    font-family: 'Montserrat', sans-serif;
+}
+.navbar-collapse {
+    flex-direction: row-reverse;
+}
+.ancho-restringido {
+    max-width: 750px;
+}
+.titulo-logo {
+    font-weight: 300%;
+}
+.nav-link {
+    transition: 0.5s;
+}
