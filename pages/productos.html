@@ -10,15 +10,15 @@
             integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
             crossorigin="anonymous"
         />
-        <script defer src="./index.js"></script>
-        <link rel="stylesheet" href="./css/style.css" />
+        <script defer src="../index.js"></script>
+        <link rel="stylesheet" href="../css/style.css" />
         <title>Verduleria Menguante</title>
     </head>
     <body>
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid ancho-restringido">
-                    <a class="navbar-brand titulo-logo" href="./index.html"
+                    <a class="navbar-brand titulo-logo" href="../index.html"
                         >Verduleria Menguante</a
                     >
                     <button
@@ -38,7 +38,7 @@
                                 <a
                                     class="nav-link active"
                                     aria-current="page"
-                                    href="./pages/productos.html"
+                                    href="./productos.html"
                                     >Productos</a
                                 >
                             </li>
@@ -47,18 +47,29 @@
                 </div>
             </nav>
         </header>
-        <main>
-            <div class="container">
-                <section class="row">
-                    <article>
-                        <a href="./pages/productos.html"
-                            ><img
-                                src="./recursos/encabezadoFrutasVerduras.jpg"
-                                alt="frutas y verduras acomodadas por colores"
-                        /></a>
-                    </article>
-                </section>
-            </div>
+        <main class="container">
+            <input type="text" id="textoDeBusqueda" />
+            <button id="boton-buscar" class="btn btn-secondary">Buscar</button>
+            <button id="boton-mostrar-todos" class="btn btn-success">
+                Mostrar Todo
+            </button>
+            <h1>Frutas destacadas</h1>
+            <section class="container">
+                <div id="cards-container" class="row"></div>
+            </section>
+            <table class="table container">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider" id="tabla"></tbody>
+            </table>
+            <button id="limpiar-ls" class="btn btn-danger mb-3">
+                Vaciar Carrito
+            </button>
         </main>
         <footer></footer>
         <script
