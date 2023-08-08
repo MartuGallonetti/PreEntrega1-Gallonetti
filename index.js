@@ -77,9 +77,9 @@ const noResul = () => {
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 //Armamos la plantilla de la card.
 plantillaCard.innerHTML = `
-<div class="card" style="width: 18rem">
+<div class="card mb-3" style="width: 18rem">
                             <img                         
-                                class="card-img-top"
+                                class="card-img-top" style= "height: 250px"
                             />
                             <div class="card-body">
                                 <h5 class="card-title">       </h5>
@@ -97,6 +97,9 @@ const botonBusqueda = document.getElementById("boton-buscar");
 const cuerpoTabla = document.getElementById("tabla");
 const limpiarLs = document.getElementById("limpiar-ls");
 const botonMostrarTodos = document.getElementById("boton-mostrar-todos");
+const myModal = document.getElementById("myModal");
+const myInput = document.getElementById("myInput");
+const dibujoCarrito = document.getElementById("dibujoCarrito");
 
 // Funcion que crea una card vacia con cada elemento que recorre del array de frutas y
 //  asigna la data correspondiente en cada card en pantalla, incluyendo el boton dinamico que ejecuta la funcion
@@ -207,7 +210,13 @@ botonMostrarTodos.addEventListener("click", () => {
 limpiarLs.addEventListener("click", () => {
     vaciarCarrito();
 });
-
+//Escuchamos el boton del carrito
+myModal.addEventListener("shown.bs.modal", () => {
+    myInput.focus();
+});
+dibujoCarrito.addEventListener("click", () => {
+    myModal();
+});
 //Ejecutamos las funciones generales que son para dibujar las cards y para mostrar la tabla que contiene
 //los articulos añadidos al carrito. Puede estar vacio como tener info, segun el LS y el array carrito
 renderizar(arrayFrutas);
